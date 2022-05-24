@@ -10,24 +10,22 @@ class LoginButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 39),
-      child: GestureDetector(
-          onTap: () {},
-          child: Container(
-            alignment: Alignment.center,
-            width: 133,
-            height: 46,
-            decoration: BoxDecoration(
-              color: const Color(AppConstant.appColor),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text(
-              'Login',
-              style: GoogleFonts.roboto(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white),
-            ),
-          )),
+      child: Container(
+        alignment: Alignment.center,
+        width: 133,
+        height: 46,
+        decoration: BoxDecoration(
+          color: const Color(AppConstant.appColor),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Text(
+          'Login',
+          style: GoogleFonts.roboto(
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+              color: Colors.white),
+        ),
+      ),
     );
   }
 }
