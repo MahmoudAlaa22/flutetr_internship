@@ -12,7 +12,6 @@ class EmailAndPasswordWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final globalKey = GlobalKey<FormState>();
     return Padding(
         padding: const EdgeInsets.only(top: 38),
         child: GetBuilder<LoginGetxController>(builder: (controller) {
@@ -21,7 +20,7 @@ class EmailAndPasswordWidget extends StatelessWidget {
               ? 'Forgot your username/password?'
               : 'Forgot password?';
           return Form(
-            key: globalKey,
+            key: controller.globalKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -53,13 +52,14 @@ class EmailAndPasswordWidget extends StatelessWidget {
                         ?.copyWith(color: const Color(AppConstant.appColor)),
                   ),
                 ),
-                GestureDetector(
-                    onTap: () {
-                      if (globalKey.currentState!.validate()) {
-                        globalKey.currentState!.save();
-                      }
-                    },
-                    child: const Center(child: LoginButtonWidget()))
+                // GestureDetector(
+                //     onTap: () {
+                //       if (globalKey.currentState!.validate()) {
+                //         globalKey.currentState!.save();
+                //         //TODO Function check if email and password is correct.
+                //       }
+                //     },
+                //     child: const Center(child: LoginButtonWidget()))
               ],
             ),
           );

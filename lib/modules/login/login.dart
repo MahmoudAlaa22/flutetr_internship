@@ -40,7 +40,7 @@ class LoginView extends StatelessWidget {
                     TabBarWidget(),
                     TitleDescription(),
                     EmailAndPasswordWidget(),
-
+                    LoginButtonWidget()
                   ],
                 ),
               ),

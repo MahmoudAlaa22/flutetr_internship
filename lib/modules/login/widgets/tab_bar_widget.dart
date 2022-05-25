@@ -9,19 +9,17 @@ class TabBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 60,left: 20,right: 20),
+      padding: const EdgeInsets.only(top: 60, left: 20, right: 20),
       child: Container(
         padding: const EdgeInsets.all(5),
-        decoration:  BoxDecoration(
-          color: const Color(0xffF3F9FF),
-          borderRadius:BorderRadius.circular(10)
-
-        ),
+        decoration: BoxDecoration(
+            color: const Color(0xffF3F9FF),
+            borderRadius: BorderRadius.circular(10)),
         child: Row(
-          mainAxisAlignment:MainAxisAlignment.spaceBetween ,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
-            TabBarItemWidget(title: 'Live',id:1),
-            TabBarItemWidget(title: 'Paper Trading',id: 2),
+            TabBarItemWidget(title: 'Live', id: 1),
+            TabBarItemWidget(title: 'Paper Trading', id: 2),
           ],
         ),
       ),

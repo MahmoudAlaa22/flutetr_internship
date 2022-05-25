@@ -1,10 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_internship/common/constant.dart';
 import 'package:get/get.dart';
 
 import '../../../common/theme/text_style.dart';
+import '../const/login_constant.dart';
 import '../state_management/login_getx_controller.dart';
 
 class TitleDescription extends StatelessWidget {
@@ -15,13 +14,13 @@ class TitleDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 31,left: 20,right: 20),
+      padding: const EdgeInsets.only(top: 31, left: 20, right: 20),
       child: GetBuilder<LoginGetxController>(builder: (controller) {
         final int itemSelected = controller.itemTabBarSelected;
         final String title = itemSelected == 1
-            ? AppConstant.liveTitleDescription
-            : AppConstant.PaperTradingTitleDescription;
-        log('AppTextStyle.textStyleLato?. is ${AppTextStyle.textStyleLato?.fontFamily}');
+            ? LoginConst.liveTitleDescription
+            : LoginConst.PaperTradingTitleDescription;
+
         return SizedBox(
           width: double.infinity,
           child: Column(
@@ -44,24 +43,22 @@ class TitleDescription extends StatelessWidget {
                     fontSize: 18,
                     color: const Color(AppConstant.appColor)),
               ),
-              const SizedBox(height: 8,),
-              RichText(text:
-              TextSpan(
-                children: [
-                  TextSpan(
-                    style:  AppTextStyle.textStyleMontserrat?.copyWith(
-                        color: Colors.black
-                    ),
-                    text: 'Don’t have an account? ',
-                  ),
-                  TextSpan(
-                    style:  AppTextStyle.textStyleMontserrat?.copyWith(
-                        color: const Color(AppConstant.appColor)
-                    ),
-                    text: 'Sign Up.',
-                  )
-                ]
-              )),
+              const SizedBox(
+                height: 8,
+              ),
+              RichText(
+                  text: TextSpan(children: [
+                TextSpan(
+                  style: AppTextStyle.textStyleMontserrat
+                      ?.copyWith(color: Colors.black),
+                  text: 'Don’t have an account? ',
+                ),
+                TextSpan(
+                  style: AppTextStyle.textStyleMontserrat
+                      ?.copyWith(color: const Color(AppConstant.appColor)),
+                  text: 'Sign Up.',
+                )
+              ])),
             ],
           ),
         );
